@@ -1,0 +1,32 @@
+web:
+  ingress:
+    enabled: true
+    hosts:
+      - "${CI_HOSTNAME}"
+    tls:
+      - secretName: concourse-tls
+        hosts:
+          - "${CI_HOSTNAME}"
+    annotations:
+       kubernetes.io/ingress.class: nginx
+       certmanager.k8s.io/cluster-issuer: letsencrypt
+concourse:
+  web:
+    logLevel: debug
+    externalUrl: https://${CI_HOSTNAME}
+    localAuth:
+      enabled: false
+    auth:
+      mainTeam:
+        localUser: ""
+        oidc:
+          user: "${CI_ADMIN_USERID}"
+      oidc:
+        enabled: true
+        displayName: Azure Active Directory
+        issuer: https://sts.windows.net/${CI_TENANT_ID}/
+        userNameKey: oid
+        groupsKey: groups
+secrets:
+  oidcClientId: ${CI_CLIENT_ID}
+  oidcClientSecret: "${CI_CLIENT_SECRET}"

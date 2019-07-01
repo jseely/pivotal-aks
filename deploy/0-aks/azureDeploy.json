@@ -4,7 +4,6 @@
   "parameters": {
     "clusterName": {
       "type": "string",
-      "defaultValue": "jseely-pivotal-aks",
       "metadata": {
         "description": "The name of the AKS cluster."
       }
