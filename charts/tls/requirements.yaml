@@ -1,0 +1,6 @@
+dependencies:
+- name: nginx-ingress
+  version: 1.10.3
+- name: jetstack/cert-manager
+  version: 0.8.1
+  repository: https://charts.jetstack.io

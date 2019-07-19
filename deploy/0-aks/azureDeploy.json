@@ -47,7 +47,7 @@
         ],
         "dnsPrefix": "[parameters('clusterName')]",
         "enableRbac": true,
-        "kubernetesVersion": "1.14.0",
+        "kubernetesVersion": "1.13.7",
         "servicePrincipalProfile": {
           "clientId": "[parameters('clientId')]",
           "Secret": "[parameters('clientSecret')]"

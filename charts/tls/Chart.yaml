@@ -1,0 +1,7 @@
+apiVersion: v1
+name: tls
+version: 0.0.1
+appVersion: 0.0.1
+maintainers:
+  - name: jseely
+      email: jseely@pivotal.io

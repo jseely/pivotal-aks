@@ -8,6 +8,7 @@ Control Plane is a concept thought of within Pivotal as the a collection of CI/C
 
 This Control Plane currently contains:
 
+* Authentication (Azure Active Directory via OpenID)
 * Concourse
 
 To deploy this solution execute the `deploy.sh` scripts in the following order:
