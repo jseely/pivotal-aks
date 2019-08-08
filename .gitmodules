@@ -1,0 +1,3 @@
+[submodule "submodules/eirini-release"]
+	path = submodules/eirini-release
+	url = git@github.com:jseely/eirini-release
