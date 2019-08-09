@@ -1,3 +1,7 @@
 [submodule "submodules/eirini-release"]
 	path = submodules/eirini-release
 	url = git@github.com:jseely/eirini-release
+[submodule "submodules/credhub-release"]
+	path = submodules/credhub-release
+	url = git@github.com:pivotal-cf/credhub-release
+	branch = k8s-credhub
