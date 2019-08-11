@@ -6,4 +6,5 @@ credhub:
       password: "${CREDHUB_DATASOURCE_PASSWORD}"
       url: "${CREDHUB_DATASOURCE_URL}"
   authServer:
+    # This should probably be something like uaa.default.svc.cluster.local
     url: "${CREDHUB_AUTH_SERVER_URL}"
