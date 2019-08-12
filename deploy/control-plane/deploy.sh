@@ -12,8 +12,16 @@ echo -e "\tCI_CLIENT_ID=${CI_CLIENT_ID}"
 echo -e "\tCI_CLIENT_SECRET=${CI_CLIENT_SECRET}"
 echo ""
 echo -e "\tUAA_ADMIN_CLIENT_SECRET=${UAA_ADMIN_CLIENT_SECRET}"
+echo ""
+echo -e "\tCREDHUB_DATABASE_USERNAME=${CREDHUB_DATASOURCE_USERNAME}"
+echo -e "\tCREDHUB_DATABASE_PASSWORD=${CREDHUB_DATASOURCE_PASSWORD}"
+echo -e "\tCREDHUB_DATABASE_URL=${CREDHUB_DATASOURCE_URL}"
+echo -e "\tCREDHUB_AUTH_SERVER_URL=${CREDHUB_AUTH_SERVER_URL}"
+echo -e "\tCREDHUB_AUTH_SERVER_CA=${CREDHUB_AUTH_SERVER_CA}"
 envsubst <"${DIR}/concourse-values.yaml.envsubst" >"${DIR}/concourse-values.yaml"
 envsubst <"${DIR}/uaa-values.yaml.envsubst" >"${DIR}/uaa-values.yaml"
+envsubst <"${DIR}/credhub-values.yaml.envsubst" >"${DIR}/credhub-values.yaml"
 
 helm install --name concourse --namespace control-plane stable/concourse -f ${DIR}/concourse-values.yaml --version 6.2.2
 helm install --name uaa --namespace uaa ${DIR}/../../submodules/eirini-release/helm/uaa -f ${DIR}/uaa-values.yaml
+helm install --name credhub --namespace credhub ${DIR}/../../submodules/credhub-release/helm/credhub -f ${DIR}/credhub-values.yaml
