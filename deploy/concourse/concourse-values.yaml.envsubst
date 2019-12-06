@@ -8,9 +8,10 @@ web:
         hosts:
           - "ci.${CI_DOMAIN}"
     annotations:
-       kubernetes.io/ingress.class: azure/application-gateway
-       cert-manager.io/cluster-issuer: letsencrypt
-       cert-manager.io/acme-challenge-type: http01
+      kubernetes.io/ingress.class: azure/application-gateway
+      appgw.ingress.kubernetes.io/ssl-redirect: true
+      cert-manager.io/cluster-issuer: letsencrypt
+      cert-manager.io/acme-challenge-type: http01
 concourse:
   web:
     logLevel: debug
@@ -21,7 +22,7 @@ concourse:
       mainTeam:
         localUser: ""
         oidc:
-          group: "${CI_ADMIN_GROUPID}"
+          user: "${CI_ADMIN_GROUPID}"
       oidc:
         enabled: true
         displayName: Azure Active Directory

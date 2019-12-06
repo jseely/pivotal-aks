@@ -9,4 +9,8 @@ spec:
     email: "${ACME_REGISTRATION_EMAIL}"
     privateKeySecretRef:
       name: letsencrypt
-    http01: {}
+    solvers:
+    - http01:
+        ingress:
+          class: azure/application-gateway
+        selector: {}
