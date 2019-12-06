@@ -1,0 +1,12 @@
+verbosityLevel: 3
+appgw:
+  subscriptionId: "13743e75-5e4f-44fc-877c-296bcb5185d5"
+  resourceGroup: "jseely-aks-westus2"
+  name: "applicationgateway2d3f"
+  shared: false
+armAuth:
+  type: aadPodIdentity
+  identityResourceID: "/subscriptions/13743e75-5e4f-44fc-877c-296bcb5185d5/resourceGroups/jseely-aks-westus2/providers/Microsoft.ManagedIdentity/userAssignedIdentities/appgwContrIdentity2d3f"
+  identityClientID: "3b510b52-c953-403a-b293-03682176c1f4"
+rbac:
+  enabled: true

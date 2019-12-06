@@ -1,0 +1,30 @@
+{
+  "aksApiServerAddress": {
+    "type": "String",
+    "value": "aks-1093b137.hcp.westus2.azmk8s.io"
+  },
+  "aksClusterName": {
+    "type": "String",
+    "value": "jseely-aks-westus2"
+  },
+  "applicationGatewayName": {
+    "type": "String",
+    "value": "applicationgateway2d3f"
+  },
+  "identityClientId": {
+    "type": "String",
+    "value": "3b510b52-c953-403a-b293-03682176c1f4"
+  },
+  "identityResourceId": {
+    "type": "String",
+    "value": "/subscriptions/13743e75-5e4f-44fc-877c-296bcb5185d5/resourceGroups/jseely-aks-westus2/providers/Microsoft.ManagedIdentity/userAssignedIdentities/appgwContrIdentity2d3f"
+  },
+  "resourceGroupName": {
+    "type": "String",
+    "value": "jseely-aks-westus2"
+  },
+  "subscriptionId": {
+    "type": "String",
+    "value": "13743e75-5e4f-44fc-877c-296bcb5185d5"
+  }
+}

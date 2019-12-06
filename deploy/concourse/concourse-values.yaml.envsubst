@@ -2,18 +2,19 @@ web:
   ingress:
     enabled: true
     hosts:
-      - "ci.${CONTROLPLANE_DOMAIN}"
+      - "ci.${CI_DOMAIN}"
     tls:
       - secretName: concourse-tls
         hosts:
-          - "ci.${CONTROLPLANE_DOMAIN}"
+          - "ci.${CI_DOMAIN}"
     annotations:
-       kubernetes.io/ingress.class: nginx
-       certmanager.k8s.io/cluster-issuer: letsencrypt
+       kubernetes.io/ingress.class: azure/application-gateway
+       cert-manager.io/cluster-issuer: letsencrypt
+       cert-manager.io/acme-challenge-type: http01
 concourse:
   web:
     logLevel: debug
-    externalUrl: https://ci.${CONTROLPLANE_DOMAIN}
+    externalUrl: https://ci.${CI_DOMAIN}
     localAuth:
       enabled: false
     auth:
